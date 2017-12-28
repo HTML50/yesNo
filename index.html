@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Yes or No</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+<div class="center">
+
+
+<div class="spinner" v-if="!isLoaded">
+  <span class="dot dot1"></span>
+  <span class="dot dot2"></span> 
+  <span class="dot dot3"></span>  
+  <span class="dot dot4"></span>
+</div>
+
+ <transition appear name="bounce" v-if="isLoaded">
+    <h1 class="title">{{ answer }}</h1>
+  </transition>
+</div>
+ <video :src="video" v-on:canplaythrough="play()" loop="true" class="video" ref="video"></video>
+  <footer class="footer">
+  <span>A REWRITE OF <a href="//yesno.wtf">YESNO.WTF</a> IN VUEJS&ensp;•&ensp;<a href="#" onclick="javascript:alert('sb')">API?</a></span>
+  <span><a href="//github.com/html50/yesNo">GITHUB</a></span>
+  </footer>
+</div>
+
+<script src="answer.js"></script>
+<script>
+  var app = new Vue({
+    el:"#app",
+    data:{
+      answer:$answer.answer,
+      video:$answer.video,
+      isLoaded: false
+    },
+    methods:{
+      play:function(){
+        this.$refs.video.play();
+        this.isLoaded = true;
+      }
+    }
+
+  })
+</script>
+
+</body>
+</html>
