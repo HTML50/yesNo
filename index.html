@@ -21,7 +21,7 @@
       </transition>
   </div>
 
- <video :src="video" v-on:canplaythrough="play()" loop="true" class="video" ref="video"></video>
+ <video :src="video" v-on:canplaythrough="play()" loop="true" class="video" ref="video" muted="true"></video>
   <footer class="footer">
   <span>A REWRITE OF <a href="//yesno.wtf">YESNO.WTF</a> IN VUEJS&ensp;•&ensp;<a href="#" @click="isAPIClicked=true">API?</a></span>
   <span><a href="//github.com/html50/yesNo">GITHUB</a></span>
