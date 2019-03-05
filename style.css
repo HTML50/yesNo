@@ -77,7 +77,6 @@ body{
     z-index: 0;
 }
 .box{
-  height: 430px;
   width: 300px;
   background: #fff;
   position: absolute;
